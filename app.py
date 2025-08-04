@@ -15,7 +15,13 @@ def calculator():
                 result = num1 + num2
             elif operation == 'subtract':
                 result = num1 - num2
-
+            elif operation == 'multiply':
+                result = num1 * num2
+            elif operation == 'divide':
+                if num2 == 0:
+                    result = "Cannot divide by zero"
+                else:
+                    result = num1 / num2
         except:
             result = "Invalid input"
     return render_template('index.html', result=result)
